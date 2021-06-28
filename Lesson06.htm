@@ -1,0 +1,67 @@
+<!-- Create a Web page with the following 3 buttons:
+<input type="button" id="startTimer" value="Start Timer"><br>
+<input type="button" id="stopTimer" value="Stop Timer"><br>
+<input type="button" id="resetTimer" value="Reset Timer"><br>
+
+The start button should start a timer displayed on this page beginning at zero and incrementing (counting up) at one second intervals. 
+REQUIRED: use the CSS innerHTML property to display your timer on the page.
+
+The stop button should stop the timer at whatever number it has reached. If this button is clicked at 8 seconds, the time should freeze at 8. 
+If the start button is then clicked, the timing should resume beginning with 8. 
+
+The reset button should stop the timer and reset it to zero.
+
+The function of this program must work no matter how often the buttons are clicked or in what order they are clicked.
+Do NOT use the "onclick" attribute in your input element, add event listeners instead. Doing so will result in a 25 point deduction. 
+Example: document.getElementById("startTimer").addEventListener("click", startTime); (where startTime is the function that starts the timer). -->
+
+
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Lesson 6: Timers</title>
+</head>
+
+<body>
+    <p id = "time"></p>
+    <input type="button" id="startTimer" value="Start Timer"><br> 
+    <input type="button" id="stopTimer" value="Stop Timer"><br>
+    <input type="button" id="resetTimer" value="Reset Timer"><br>
+    
+<script>
+let count = 0; //intialize timer variable to 0 to count seconds
+let start = setTimeout(startTime, 1000); //timer, beginning at zero, incrementing at one second intervals; assoc. w/ startTime function
+let timerIsOn = 0; // initialize variable that denotes status of timer as either on or off
+
+//Event Listeners: when their respective buttons are clicked, their designated functions are called
+document.getElementById("startTimer").addEventListener("click", startTime);
+document.getElementById("stopTimer").addEventListener("click", stopTime);
+document.getElementById("resetTimer").addEventListener("click", resetTime);
+
+
+// The start button should start a timer displayed on this page beginning at zero and incrementing (counting up) at one second intervals.
+function startTime() {
+    document.getElementById("time").innerHTML = count; 
+    count++;       
+    timerIsOn = 1;                
+}
+
+/*The stop button should stop the timer at whatever number it has reached. If this button is clicked at 8 seconds, the time should freeze at 8. 
+If the start button is then clicked, the timing should resume beginning with 8. */
+function stopTime() {
+    clearTimeout(start);
+    timerIsOn = 0; 
+    }
+
+//The reset button should stop the timer and reset it to zero.
+function resetTime() { 
+    stopTime(); 
+    count = 0;
+    document.getElementById("time").innerHTML = count;    
+    } 
+
+</script>
+</body>
+</html>

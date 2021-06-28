@@ -1,0 +1,36 @@
+How this program works:
+
+    When the page loads a prompt() method will request that the viewer enter their age.
+    A command button will be clicked by the viewer after he or she has provided their age. Hint, use a generic form button, NOT a submit button. Example: <button>My Button</button>.
+    The viewer will be redirected to the appropriate Web site based on the age they entered when prompted to do so.
+
+Follow these steps:
+
+    Create a Web (.html) page named ageChecker.html. This page must include a command button and some text explaining to the viewer that they will be redirected to an appropriate Web site after they provide their age and click the button.
+    In the head element of your .html file, create a script element. Inside the script element, code a prompt() method that will provide an area for the user to enter their age. You may assume that the viewer will enter a whole (integer) number between 5 and 95. Assign that value to a variable named "theAge". Don't forget to use the parseFloat() or parseInt() method to ensure that you populate your variable with numeric data.
+    In your script element, create a function named myRedirect(). When this function is called, based on the viewer's age stored in your "theAge" variable, create an if/else statement  that will redirect the viewer to http://www.disney.com/ if they are under the age of 21. If they are 21 or older, redirect them to http://www.espn.com/ after the command button is clicked (this is an onclick event). Determining which site to redirect the viewer to is the job of your if/else condition (see Chapter 4).
+    Code an event listener so that when the button is clicked your function named myRedirect() executes the code contained with its curly brackets.
+    Test your code to make sure the user is properly redirected; ESPN for 21 and over, Disney for all others.
+
+<!DOCTYPE html> 
+<html>
+
+<head> 
+    <meta charset='utf-8'>
+    <title>Age Checker</title>
+    <h2>Redirecting The Viewer with An If/Else Statement</h2>
+    <p>Please input your age and click the submit button in order to be redirected to an age-appropriate website.</p>
+    <button id ="submit">Submit</button>
+    <script>
+        var theAge = parseInt(prompt("Please input your age."));
+        document.getElementById("submit").addEventListener('click', myRedirect);        
+        function myRedirect() {
+            if (theAge < 21) {
+                (window.location = "http://www.disney.com/");                  
+            } else if (theAge >= 21) {
+                (window.location = "http://www.espn.com/");              
+            }
+        }
+    </script>
+</head>
+</html>

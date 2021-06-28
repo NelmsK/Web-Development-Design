@@ -1,0 +1,31 @@
+Create a Web (.html) page named numbers.html. Create a script element inside the body element of your web page. Create a while loop that will write to your Web page every third number between 0 and 101 (your first number should be 1). These numbers should each appear on a new line. Hint: use the document.write() method for your page output and include a <br> element in your.
+Note: Your text uses the document.writeln() method to write text to your Web page. This method is supposed to create a new line as if a line break were applied. It only works if applied in conjunction with a pre element which is a terrible idea so stick with the document.write() method and add a break tag as shown in your text.
+
+Your output will look like this:
+1
+4
+7
+10
+13
+etc. until the last number:
+100
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lesson 5: Numbers</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        //for loop: generates output of every third number within range of 0-101
+        for (let i = 1; i < 101; (i = i+3)) {
+            document.write(i + "<br>"); //output of those selected numbers with an inclusion of a line break after every number
+        }
+    </script>
+</body>
+</html>

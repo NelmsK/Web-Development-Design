@@ -1,0 +1,36 @@
+
+3: Chapter 3 Assignment
+Assignment outline
+Create a Web page (.html file) that contains a JavaScript Program that calculates the following multiplication equation: 9 * 47 = 423. You will use an alert() method to reveal the correct answer. 
+Requirements:
+
+    Your HTML5 head element must contain a script element where all of your JavaScript is coded
+    Your JavaScript must contain a function named myMultiplication()
+    Your function must have 2 parameters for accepting 2 arguments (1 each)
+    Your function call will pass 2 arguments (9 & 47) to your function parameters
+    Your function must multiply these 2 numbers (parameter values) and return the product of your multiplication (423) to your function call using a return statement
+    Your function call must be placed (nested) in an alert() method parentheses to display your result in a pop-up (alert) window.
+    
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head> 
+    <meta charset = 'utf-8'>
+    <title> Chapter 3 Assignment </title>
+
+    <style>
+
+    </style>
+   
+</head>
+
+<body>
+    <script>
+        function myMultiplication(multiplicand, multiplier) {
+            let product = multiplicand * multiplier;
+            return product; 
+        }
+        alert(myMultiplication(9,47));
+    </script>    
+</body>
+</html>

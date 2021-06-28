@@ -1,7 +1,6 @@
 This assignment requires you to create 1 file, a HTML5 document (.htm or .html).
 HTML5 document
 
-    Use your newly downloaded editor, create the HTML5 document named index.html as outlined on pages 8 through 10 of your text.
     In the body element, type your name, e-mail address, and college major.
     Place each bit of information in a paragraph element ( <p> </p> ) so that each appears on its own line.
     Place a script element Just before your closing body tag inside your HTML5 document as outlined on pages 10 & 11 of your text.

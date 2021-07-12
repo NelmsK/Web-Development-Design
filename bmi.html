@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        h1 {color:navy;}
+        p#bmiResult{
+            color:navy;
+            font-weight:bold;
+            font-size:1.5em;
+        }
+        label {font-weight: 900;}
+        fieldset {width:30%;}
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><h1>BMI Calculator</h1></legend>
+        <p>
+        <label for="myPounds">Please enter your weight in pounds.<br> Example: 178.5 pounds equals 178 pounds & 8 ounces:</label><br>
+        <input type = "text" id = "myPounds"><br><br>
+        <label for="myHeight">Please enter your height in inches. <br>Example: 72.5 pounds equals 6' & 1/2":</label><br>
+        <input type = "text" id = "myHeight"><br><br>
+        <input type = "button" id = "calcBMI" value = "Calculate BMI">
+        </p>
+    </fieldset>
+    </form>
+    <p id = "bmiResult"></p>
+    <script src = "bmi.js"></script>
+</body>
+</html>

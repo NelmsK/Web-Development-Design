@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--CSS Style Sheet-->
+<link rel="stylesheet" href="finalProject.CSS">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+
+<!--Font Awesome Icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title> Resume Generator</title>
+    
+</head>
+<body>
+    <!--Banner-->
+    <div class="banner" id="bannerToggleDisplay">
+        <div class="bannerContent">
+            <div class="bannerText">
+                <h1>Build Your Resume</h1>
+                <br>
+                <h3>Kristen Nelms</h3>
+                <br>
+                <p>Course: CSC-227
+                Section: 0001</p>
+            </div>
+            <button class="bannerClose" type="button">
+                <span class="material-icons">
+                    close
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="someHeader"></div> <!--Arbitrary Spacing-->
+   
+    <div class="container" id="resume-form">
+        <div class="row">
+            <div class="col-50">
+                <!-- first col, left-hand side-->
+                <h3>Contact Information</h3>
+
+                <label for='firstNameField'>First Name</label>
+                <input type="text" id="firstNameField" placeholder="e.g. Jane" class="form-control firstNameField">                            
+
+                <label for='lastNameField'>Last Name</label>
+                <input type="text" id="lastNameField" placeholder="e.g. Doe" class="form-control lastNameField">                            
+
+                <label for='professionField'>Profession</label>
+                <input type="text" id="professionField" placeholder="e.g. Web Developer" class="form-control">
+                
+                <label for="phoneField">Phone Number</label>
+                <input type="tel" id="phoneField" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="e.g. XXX-XXX-XXXX" class="form-control">                            
+
+                <!--Email Address is required field-->
+                <label for= "emailField">Email Address</label>
+                <input type="email"  id="emailField"  class="form-control" placeholder="e.g. janeDoe@gmail.com"  required><br>                         
+                
+                
+                <div class="row">  <!-- new row to generate in-line formatting -->
+                    <div class="col-33">
+                        <label for="cityField">City</label>
+                        <input type="text" id="cityField" placeholder="e.g. Raleigh" class="form-control cityInputField">
+                    </div>
+                    <div class="col-33">
+                        <label for="stateField">State</label>
+                            <select name="state" id="stateField" class="form-control stateInputField">
+                                <option value=""></option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                    <div class="col-33">                     
+                        <label for="zipField">Zip-Code</label>
+                        <input type="text" id="zipField" placeholder="e.g. 27614" class="form-control zipInputField">
+                    </div>
+                </div>
+                                                                    
+                <p class="text-secondary my-3" id="importantLinks">Important Links</p>
+
+                <div class="form-group mt-2" id="social1">          
+                    <label for ="linkLabel">LinkedIn</label>
+                    <textarea id="linkedIn" placeholder="Enter your linkedIn handle here:" class="form-control linkedIn" rows="1"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="social2">     
+                    <label for ="linkLabel">GitHub</label>
+                    <textarea id="gitHub" placeholder="Enter your GitHub handle here:" class="form-control gitHub" rows="1"></textarea>
+                </div>                                                               
+
+                <div class="form-group mt-3" id="tech">
+                    <h3>Technical Skills</h3>
+                    <textarea id="techSkillsField" placeholder="Enter any relevant technical skills such as: JavaScript and PHP." rows="2"class="form-control techSkillsField" rows="1"></textarea>
+                    
+                    <div class="container text-center mt-2" id="techSkillsAddButton">
+                        <button onclick="addNewTechSkillsField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>                            
+                </div>
+
+                <div class="form-group mt-2" id="skills">
+                    <h3>Other Skills</h3>
+                    <textarea id="skillsField" placeholder="Enter any relevant skills such as: coding skills, work ethic, writing skills, etc." 
+                    class="form-control skillsField" rows="2"></textarea>
+                    
+                    <div class="container text-center mt-2" id="skillsAddButton">
+                        <button onclick="addNewSkillsField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>     
+                </div>
+
+                 <!--Work Input Field-->
+                 <h3>Work Experience</h3>
+                 <div class="form-group mt-2" id='work'>
+                     <label for='jobTitleLabel'>Job Title</label>
+                     <input type="text" id="jobTitleField" placeholder="e.g. Web Developer" class="form-control jobTitleField">
+ 
+                     <label for='employerLabelField'>Company Title/Employer's Name</label>
+                     <input type="text"id="employerField" placeholder="e.g. Google" class="form-control employerField">
+ 
+                     <label for="">Description</label>
+                     <textarea placeholder="Enter here"class="form-control jobDescriptionField" id="jobDescriptionField" rows="3"></textarea>
+ 
+                     <div class="row">
+                         <div class="col">
+                             <label for ="workStartField">Start Date</label>
+                             <input type="date" id="workStartField" class="form-control workStartField">
+                         </div>
+                         <div class='col'> 
+                             <label for ="workEndField">End Date</label>
+                             <input type="date" id="workEndField" class="form-control workEndField">
+                         </div> 
+                     </div>
+                 </div> <!--End of work input field-->  
+                      
+            </div>
+            
+            <!-- second col, right-hand side -->
+            
+            <div class="col-50">  
+                <h3>Work Experience Continued</h3>
+                <div class="form-group mt-2" id='work2'>
+                    <label for='jobTitleLabel2'>Job Title</label>
+                    <input type="text" id="jobTitleField2" placeholder="e.g. Web Developer" class="form-control jobTitleField2">
+
+                    <label for='employerLabelField2'>Company Title/Employer's Name</label>
+                    <input type="text"id="employerField2" placeholder="e.g. Google" class="form-control employerField2">
+
+                    <label for="">Description</label>
+                    <textarea placeholder="Enter here"class="form-control jobDescriptionField2" id="jobDescriptionField2" rows="3"></textarea>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for ="workStartField">Start Date</label>
+                            <input type="date" id="workStartField2" class="form-control workStartField2">
+                        </div>
+                        <div class='col'> 
+                            <label for ="workEndField">End Date</label>
+                            <input type="date" id="workEndField2" class="form-control workEndField2">
+                        </div> 
+                    </div>
+
+                </div> <!--End of work input field-->  
+
+                <div class="form-group mt-2" id='work3'>
+                    <label for='jobTitleLabel'>Job Title</label>
+                    <input type="text" id="jobTitleField3" placeholder="e.g. Web Developer" class="form-control jobTitleField3">
+
+                    <label for='employerLabelField'>Company Title/Employer's Name</label>
+                    <input type="text"id="employerField3" placeholder="e.g. Google" class="form-control employerField3">
+
+                    <label for="">Description</label>
+                    <textarea placeholder="Enter here"class="form-control jobDescriptionField3" id="jobDescriptionField3" rows="3"></textarea>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for ="workStartField">Start Date</label>
+                            <input type="date" id="workStartField3" class="form-control workStartField3">
+                        </div>
+                        <div class='col'> 
+                            <label for ="workEndField">End Date</label>
+                            <input type="date" id="workEndField3" class="form-control workEndField3">
+                        </div> 
+                    </div>
+                </div> <!--End of work input field-->  
+                 
+                              
+                <div class="form-group mt-3" id="edu"> <!--Education Input Field-->
+                    <h3>Education</h3>
+                    <label for="educationNameField">Institution Name</label>
+                    <input type = "text" id="eduName" class = "form-control eduNameField" placeholder= "Enter the name of the institution here:">
+
+                    <label for="degreeNameField">Degree</label>
+                    <input type = "text" id="degree" class = "form-control degreeField" placeholder= "Enter the degree earned here:">
+
+                    <label for="descriptionField">Description</label>
+                    <textarea id="descriptionField" placeholder="Enter any additional information here" class="form-control descriptionField" rows="3"></textarea>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for ="eduStartField">Start Date</label>
+                            <input type="date" id="eduStartField" class="form-control eduStartDateField">
+                        </div>
+                        <div class='col'> 
+                            <label for ="eduEndField">End Date</label>
+                            <input type="date" id="eduEndField" class="form-control eduEndDateField">
+                        </div>
+                    </div>
+                </div><!--End of Education Input Field-->		
+                                    
+                <div class="form-group mt-3" id="cert"> <!--Certification Input Field-->
+                    <h3>Certifications</h3>
+                    <textarea id="certField" placeholder="Input any and all relevant certifications here..." class="form-control certField" rows="2"></textarea>
+
+                    <div class="container text-center mt-2" id="certificationAddButton">
+                        <button onclick="addNewCertField()" class="btn btn-primary btn-sm">Add</button>
+                    </div> 
+                </div><!--End of Certification Input Field-->
+                  
+            </div><!--End of right-hand column-->        
+
+            <div class="container text-center mt-2" id="genResumeButton">
+                <button id="genResumeButton" class="btn btn-primary btn-lg">Generate Resume</button>
+            </div>
+        </div>
+    </div>    
+                
+    <!--Resume Output Template-->
+    <div class="container" id="resume-template">
+        <!--Header-->
+        <div class="templateHeader">
+            <img src="defaultProfilePic.jpg">
+            <div class="header-text">
+                <h1 id="nameTemplate"></h1>
+                <p id="professionTemplate">Profession</p>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="left-area">              
+                <div class="contact">
+                    <h1>CONTACT</h1>
+                    <hr>
+                    <ul> 
+                        <!-- <h5>Address</h5> -->
+                        <li><i class="home" id="home"></i>
+                            <p id="addressTemplate">Address</p>
+                        </li>                    
+                         <!-- <h5>Phone Number</h5> -->
+                         <li><i class="phone" id="phone"></i>                  
+                            <p id="phoneTemplate">Phone</p>
+                        </li>
+                        <!-- <h5>Email</h5> -->
+                        <li><i class="envelope" id="mail"></i>
+                            <p id="emailTemplate">Email</p>
+                        </li>                     
+                    </ul>           
+                </div>
+                <div class="socialMedia">
+                    <h1>FOLLOW ME</h1>
+                    <hr>
+                    <ul id="socials">
+                        <li id="linked">
+                            <span><i class="linkedin" id="linkedIn"></i></span>
+                            <p><a id="linkedInTemplate" href...></a></p>
+                        </li>
+
+                        <li id="git">
+                            <span><i class="github" id="github"></i></span>
+                            <p><a  id="gitHubTemplate" href...></a></p>
+                        </li>   
+                    </ul>                  
+                </div>
+
+                <div class="skills">
+                    <h1>SKILLS</h1>
+                    <hr>
+                    <div class="grid">
+                        <div class="box">
+                            <p id = "techSkillTemplate"></p>
+                        </div>
+                        <div class="box">             
+                            <p id= "skillTemplate"></p>    
+                        </div> 
+                    </div>
+                </div>
+                
+            </div> <!--End of left area-->               
+            
+            <div class="right-area"> 
+                <div class = "card mt-4">
+                    <!--WORK EXPERIENCE-->
+                    <div class="card-header background">
+                        <h1>WORK EXPERIENCE</h1>
+                    </div>
+                    <div class="work-body">
+                        <ul>
+                            <li>
+                                <h2 id="job"></h2>
+                                <h3 id="employer"></h3>
+                                <h4 id="workDates"></h4>
+                                <p id="jobDescription"></p>
+                            </li>
+
+                            <li>
+                                <h2 id="job2"></h2>
+                                <h3 id="employer2"></h3>
+                                <h4 id="workDates2"></h4>
+                                <p id="jobDescription2"></p>
+                            </li>
+
+                            <li>
+                                <h2 id="job3"></h2>
+                                <h3 id="employer3"></h3>
+                                <h4 id="workDates3"></h4>
+                                <p id="jobDescription3"></p>
+                            </li>
+                        </ul>
+                                              
+                    </div>                        
+                </div>
+              
+                <!--Education-->
+                <div class = "card mt-4">
+                    <div class="card-header background">
+                        <h1>EDUCATION</h1>
+                    </div>  
+                    <div class="edu-group">
+                        <ul>
+                            <li>
+                                <h2 id="eduNameField"></h2> 
+                                <h3 id="eduDegreeHeld"></h3>
+                                <h4 id="eduDates"></h4>
+                                <p id= "educationTemplate"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                    <!--Certifications-->
+                <div class = "card mt-4">
+                    <div class="card-header background">
+                        <h1>CERTIFICATIONS</h1>
+                    </div>
+                    <div class="cert-group">
+                        <p id="certTemplate">Certifications</p>                                                      
+                    </div>
+                </div>
+                
+                <div class="container mt-5 text-center">
+                    <button onclick="printResume()" class="btn background">Print Resume</button>
+                </div>
+            </div>
+        </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="resumeGeneratorWIP.js"></script>
+</body>
+</html>
+
+
+
+
+
